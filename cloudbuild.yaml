@@ -4,4 +4,9 @@ steps:
     name: "gcr.io/cloud-builders/go"
     args: ["build","."]
     env: ["GOPATH=."]
+  - id: go_docker
+    name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/gohello-image', '.' ]
+    images:
+  - 'gcr.io/$PROJECT_ID/gohello-image'    
   
