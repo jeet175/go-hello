@@ -2,9 +2,9 @@ steps:
   # see https://www.npmjs.com/package/editorconfig-checker
   - id: go_test
     name: "gcr.io/cloud-builders/go"
-    args: ["test","GO-HELLO\src"]
+    args: ["test","src"]
     env: ["GOPATH=."]
   - id: your_step_here
     name: "gcr.io/cloud-builders/go"
-    args: ["run","GO-HELLO\src"]
+    args: ["run","src"]
     env: ["GOPATH=."]
