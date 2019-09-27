@@ -1,1 +1,1 @@
-Fromgolang:onbuild
+FROM golang:onbuild
