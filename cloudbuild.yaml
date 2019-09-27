@@ -1,7 +1,10 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/gohello-image', '.' ]
-images:
-- 'gcr.io/$PROJECT_ID/gohello-image'
-  
-  
+  # see https://www.npmjs.com/package/editorconfig-checker
+  - id: go_test
+    name: "gcr.io/cloud-builders/go"
+    args: ["test","helloworld"]
+    env: ["GOPATH=."]
+  - id: your_step_here
+    name: "gcr.io/cloud-builders/go"
+    args: ["run","GO-HELLO"]
+    env: ["GOPATH=."]
